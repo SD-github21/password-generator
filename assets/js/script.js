@@ -1,17 +1,21 @@
 // Assignment code here
 
-// create password length prompt with conditional recursive function call to ensure password falls only between 8-128 characters
-
+// Create password length prompt with conditional recursive function call to ensure password falls only between 8-128 characters
 var checkLength = function () {
   var passwordLength = window.prompt("Please choose the length of your password (between 8 and 128 characters)");
     if (passwordLength <8 || passwordLength > 128) {
       window.alert("You need to provide a valid answer! Please try again.");
       return checkLength();
   }
-
 }
-
 checkLength();
+
+var lowerCaseConfirm = window.confirm("Do you want to include lowercase characters in your password?");
+var upperCaseConfirm = window.confirm("Do you want to include uppercase characters in your password?");
+var numericConfirm = window.confirm("Do you want to include numeric characters in your password?");
+var specialCharConfirm = window.confirm("Do you want to include special characters in your password?");
+
+
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
