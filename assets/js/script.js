@@ -11,10 +11,6 @@ var checkLength = function () {
 checkLength();
 
 // add prompts to confirm inclusion of different character types in password generator
-var lowerCaseConfirm = window.confirm("Do you want to include lowercase characters in your password?");
-var upperCaseConfirm = window.confirm("Do you want to include uppercase characters in your password?");
-var numericConfirm = window.confirm("Do you want to include numeric characters in your password?");
-var specialCharConfirm = window.confirm("Do you want to include special characters in your password?");
 
 // add variables to hold character types -- using arrays
 // var alphaLower = ["a", "b", "c", "d", "e", "f", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x,", "y", "z"]
@@ -24,71 +20,85 @@ var specialCharConfirm = window.confirm("Do you want to include special characte
 
 // add variables to hold character types -- using "charAt" method
 
-
 var charTypeCheck = function() {
-  if ((lowerCaseConfirm) && (upperCaseConfirm) && (numericConfirm) && (specialCharConfirm)) {
-    var alltypes = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!#$%&*+,/:;<=>?@^{|}~";
-    console.log(alltypes);
-    
-  }
-  else if ((lowerCaseConfirm) && (upperCaseConfirm) && (numericConfirm)) {
-    var allButSpecial = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-    console.log(allButSpecial);
-  }
-
-  else if ((lowerCaseConfirm) && (upperCaseConfirm) && (specialChar)) {
-    var allButNumeric = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!#$%&*+,/:;<=>?@^{|}~";
-    console.log(allButNumeric);
-  }
-
-  else if ((lowerCaseConfirm) && (upperCaseConfirm)) {
-    var alphaUpperLower = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
-    console.log(alphaUpperLower);
-  }
-
-  else if ((specialChar)&& (numericConfirm)) {
-    var specialNumeric = "!#$%&*+,/:;<=>?@^{|}~0123456789";
-    console.log(specialNumeric);
-  }
-
-  else if ((specialChar)&& (lowerCaseConfirm)) {
-    var specialLower = "!#$%&*+,/:;<=>?@^{|}~abcdefghijklmnopqrstuvwxyz";
-    console.log(specialLower);
-  }
-
-  else if ((specialChar)&& (upperCaseConfirm)) {
-    var specialUpper = "!#$%&*+,/:;<=>?@^{|}~ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    console.log(specialUpper);
-  }
-
-
-  else if (lowerCaseConfirm) {
-    var alphaLower = "abcdefghijklmnopqrstuvwxyz";
-    console.log(alphaLower);
-  }
+  var lowerCaseConfirm = window.confirm("Do you want to include lowercase characters in your password?");
+  var upperCaseConfirm = window.confirm("Do you want to include uppercase characters in your password?");
+  var numericConfirm = window.confirm("Do you want to include numeric characters in your password?");
+  var specialCharConfirm = window.confirm("Do you want to include special characters in your password?");
   
-  else if (upperCaseConfirm) {
-    var alphaUpper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    console.log(alphaUpper);
-  }
-  
-  else if (numericConfirm) {
-    var numeric = "0123456789";
-    console.log(numeric);
-  }
-
-  else if (specialChar) {
-    var specialChar = "!#$%&*+,/:;<=>?@^{|}~;"
-    console.log(specialChar);
-  }
-
-  else {
-    window.alert("You need to choose at least one character option. Please try again");
+  if (!(lowerCaseConfirm) && !(upperCaseConfirm) && !(numericConfirm) && !(specialCharConfirm)) {
+    window.alert("You need to choose at least one character option. Please try again.");
     return charTypeCheck();   
   };
 }
 
 charTypeCheck();
+
+
+// var charTypeCheck = function() {
+//   if ((lowerCaseConfirm) && (upperCaseConfirm) && (numericConfirm) && (specialCharConfirm)) {
+//     var alltypes = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!#$%&*+,/:;<=>?@^{|}~";
+//     console.log(alltypes);
+    
+//   }
+//   else if ((lowerCaseConfirm) && (upperCaseConfirm) && (numericConfirm)) {
+//     var allButSpecial = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+//     console.log(allButSpecial);
+//   }
+
+//   else if ((lowerCaseConfirm) && (upperCaseConfirm) && (specialChar)) {
+//     var allButNumeric = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!#$%&*+,/:;<=>?@^{|}~";
+//     console.log(allButNumeric);
+//   }
+
+//   else if ((lowerCaseConfirm) && (upperCaseConfirm)) {
+//     var alphaUpperLower = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+//     console.log(alphaUpperLower);
+//   }
+
+//   else if ((specialChar)&& (numericConfirm)) {
+//     var specialNumeric = "!#$%&*+,/:;<=>?@^{|}~0123456789";
+//     console.log(specialNumeric);
+//   }
+
+//   else if ((specialChar)&& (lowerCaseConfirm)) {
+//     var specialLower = "!#$%&*+,/:;<=>?@^{|}~abcdefghijklmnopqrstuvwxyz";
+//     console.log(specialLower);
+//   }
+
+//   else if ((specialChar)&& (upperCaseConfirm)) {
+//     var specialUpper = "!#$%&*+,/:;<=>?@^{|}~ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+//     console.log(specialUpper);
+//   }
+
+
+//   else if (lowerCaseConfirm) {
+//     var alphaLower = "abcdefghijklmnopqrstuvwxyz";
+//     console.log(alphaLower);
+//   }
+  
+//   else if (upperCaseConfirm) {
+//     var alphaUpper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+//     console.log(alphaUpper);
+//   }
+  
+//   else if (numericConfirm) {
+//     var numeric = "0123456789";
+//     console.log(numeric);
+//   }
+
+//   else if (specialChar) {
+//     var specialChar = "!#$%&*+,/:;<=>?@^{|}~;"
+//     console.log(specialChar);
+//   }
+
+//   else {
+//     window.alert("You need to choose at least one character option. Please try again");
+//     return charTypeCheck();   
+//   };
+// }
+
+// charTypeCheck();
 
 // var generatePassword = function() {
 //   var password = "";
