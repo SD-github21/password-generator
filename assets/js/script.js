@@ -85,17 +85,28 @@ var generatePassWord = function() {
       Array.prototype.push.apply(passwordPool, specialChar);
     }
 
-  var password = [];
-  console.log(password);
+  var passwordArray = [];
   for (var i = 0; i < passwordLength; i++) {
     var randomIndex = Math.floor(Math.random() * passwordPool.length);
-    password.push(passwordPool[randomIndex]);
-    
+    passwordArray.push(passwordPool[randomIndex]);  
 
   }
-  
+  return passwordArray;
+
 }
 generatePassWord();
+
+var generatePassword = function() {
+  var passwordArray = generatePassWord();
+  console.log(passwordArray)
+  var password = passwordArray.join("");
+
+  return password;
+
+}
+
+console.log(generatePassword());
+
 
 // build generatePassword function using strings and characters
 // var generatePassword = function() {
