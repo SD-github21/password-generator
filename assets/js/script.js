@@ -66,27 +66,31 @@ console.log(specialCharConfirm);
 
 // build generatePassword function using arrays
 var generatePassWord = function() {
-  var password = [];
+  var passwordPool = [];
   var alphaLower = ["a", "b", "c", "d", "e", "f", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x,", "y", "z"]
   var alphaUpper = ["A", "B", "C", "D", "E", "F", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X,", "Y", "Z"]
   var numeric = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
   var specialChar = ["!", "#", "$", "%", "&", "*", "+", "/", ":", ";", "<", "=", ">", "?", "@", "^", "{", "|", "}", "~"]
 
       if (lowerCaseConfirm) {
-      Array.prototype.push.apply(password, alphaLower);
+      Array.prototype.push.apply(passwordPool, alphaLower);
     }  
     if (upperCaseConfirm) {
-      Array.prototype.push.apply(password, alphaUpper);
+      Array.prototype.push.apply(passwordPool, alphaUpper);
     }  
     if (numericConfirm) {
-      Array.prototype.push.apply(password, numeric);
+      Array.prototype.push.apply(passwordPool, numeric);
     }  
     if (specialCharConfirm) {
-      Array.prototype.push.apply(password, specialChar);
+      Array.prototype.push.apply(passwordPool, specialChar);
     }
 
-  for (var i = 0; i <= passwordLength + 1; i++) {
-    console.log(password);
+  var password = [];
+  for (var i = 0; i < passwordLength; i++) {
+    var randomIndex = Math.floor(Math.random() * passwordPool.length);
+    var randomItem = passwordPool[randomIndex];
+      Array.prototype.push.apply(password, randomItem);
+    console.log(randomItem);
   }
   
 }
