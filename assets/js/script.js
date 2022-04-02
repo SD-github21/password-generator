@@ -73,11 +73,21 @@ var generatePassWord = function() {
   var specialChar = ["!", "#", "$", "%", "&", "*", "+", "/", ":", ";", "<", "=", ">", "?", "@", "^", "{", "|", "}", "~"]
 
   for (var i = 0; i <= passwordLength + 1; i++) {
-    if ((lowerCaseConfirm) && (upperCaseConfirm) && (numericConfirm) && (specialCharConfirm)) {
-      password = alphaLower + alphaUpper + numeric + specialChar
-      console.log(password);
+    if (lowerCaseConfirm) {
+      password.push(alphaLower);
+    }  
+    if (upperCaseConfirm) {
+      password.push(alphaUpper);
+    }  
+    if (numericConfirm) {
+      password.push(numeric)  
+    }  
+    if (specialCharConfirm) {
+      password.push(specialChar)
+    }
+    console.log(password);
   }
-  }
+  
 }
 generatePassWord();
 
