@@ -48,11 +48,21 @@ var charTypeCheck = function() {
 };
 
 var confirmObject = charTypeCheck();
+console.log(confirmObject);
 
-let lowerCaseConfirm = confirmObject.lowerCaseConfirm;
+var lowerCaseConfirm = confirmObject.lowerCaseConfirm;
 console.log(lowerCaseConfirm);
-// let confirmObject = charTypeCheck();
-// console.log(confirmObject);
+
+var upperCaseConfirm = confirmObject.upperCaseConfirm;
+console.log(upperCaseConfirm);
+
+var numericConfirm = confirmObject.numericConfirm;
+console.log(numericConfirm);
+
+var specialCharConfirm = confirmObject.specialCharConfirm;
+console.log(specialCharConfirm);
+
+
 
 // build generatePassword function using arrays
 var generatePassWord = function() {
@@ -64,8 +74,8 @@ var generatePassWord = function() {
 
   for (var i = 0; i <= passwordLength + 1; i++) {
     if ((lowerCaseConfirm) && (upperCaseConfirm) && (numericConfirm) && (specialCharConfirm)) {
-      password += alphaLower
-      console.log(alphaLower);
+      password = alphaLower + alphaUpper + numeric + specialChar
+      console.log(password);
   }
   }
 }
