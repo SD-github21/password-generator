@@ -28,6 +28,15 @@ var alphaUpper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 var numeric = "0123456789"
 var specialChar = "!#$%&*+,/:;<=>?@^{|}~"
 
+var generatePassword = function() {
+  var password = "";
+  for (var i = 0; i <= passwordLength; i++) {
+      password = 
+
+  }
+}
+
+
 
 
 
