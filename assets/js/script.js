@@ -10,6 +10,7 @@ var checkLength = function () {
 }
 checkLength();
 
+// add prompts to confirm inclusion of different character types in password generator
 var lowerCaseConfirm = window.confirm("Do you want to include lowercase characters in your password?");
 var upperCaseConfirm = window.confirm("Do you want to include uppercase characters in your password?");
 var numericConfirm = window.confirm("Do you want to include numeric characters in your password?");
