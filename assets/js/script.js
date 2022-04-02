@@ -88,9 +88,9 @@ var generatePassWord = function() {
   var password = [];
   for (var i = 0; i < passwordLength; i++) {
     var randomIndex = Math.floor(Math.random() * passwordPool.length);
-    var randomItem = passwordPool[randomIndex];
-      // Array.prototype.push.apply(password, randomItem);
-    console.log(randomItem);
+    password.push(passwordPool[randomIndex]);
+    console.log(password);
+
   }
   
 }
