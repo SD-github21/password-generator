@@ -72,19 +72,20 @@ var generatePassWord = function() {
   var numeric = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
   var specialChar = ["!", "#", "$", "%", "&", "*", "+", "/", ":", ";", "<", "=", ">", "?", "@", "^", "{", "|", "}", "~"]
 
-  for (var i = 0; i <= passwordLength + 1; i++) {
-    if (lowerCaseConfirm) {
-      password.push(alphaLower);
+      if (lowerCaseConfirm) {
+      Array.prototype.push.apply(password, alphaLower);
     }  
     if (upperCaseConfirm) {
-      password.push(alphaUpper);
+      Array.prototype.push.apply(password, alphaUpper);
     }  
     if (numericConfirm) {
-      password.push(numeric)  
+      Array.prototype.push.apply(password, numeric);
     }  
     if (specialCharConfirm) {
-      password.push(specialChar)
+      Array.prototype.push.apply(password, specialChar);
     }
+
+  for (var i = 0; i <= passwordLength + 1; i++) {
     console.log(password);
   }
   
