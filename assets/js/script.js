@@ -2,14 +2,30 @@
 
 // Create password length prompt 
 // Add conditional recursive function call to ensure password falls only between 8-128 characters
-var checkLength = function () {
-  var passwordLength = window.prompt("Please choose the length of your password (between 8 and 128 characters)");
-    if (passwordLength <8 || passwordLength > 128) {
-      window.alert("You need to choose a number between 8 and 128. Please try again.");
-      return checkLength();
+// var checkLength = function () {
+//   var passwordLength = window.prompt("Please choose the length of your password (between 8 and 128 characters)");
+//     if (passwordLength <8 || passwordLength > 128) {
+//       window.alert("You need to choose a number between 8 and 128. Please try again.");
+//       return checkLength();
+//   }
+// }
+// checkLength();
+
+
+// Create password length prompt using a different method
+// Add conditional recursive function call to ensure password falls only between 8-128 characters
+var getLength = function () {
+  passwordLength = "";
+    while (passwordLength < 8 || passwordLength > 128) {
+      passwordLength = prompt("Please choose the length of your password (between 8 and 128 characters)");
   }
-}
-checkLength();
+  console.log(passwordLength)
+  return passwordLength;
+};
+
+// Add storage of password
+var passwordLength = Number(getLength());
+console.log (passwordLength);
 
 
 // Add prompts to confirm inclusion of different character types in password generator 
@@ -26,10 +42,10 @@ var charTypeCheck = function() {
   };
 }
 
-charTypeCheck();
 
 // build generatePassword function using arrays
 var generatePassWord = function() {
+  charTypeCheck();
   var password = [];
   var alphaLower = ["a", "b", "c", "d", "e", "f", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x,", "y", "z"]
   var alphaUpper = ["A", "B", "C", "D", "E", "F", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X,", "Y", "Z"]
