@@ -1,14 +1,13 @@
 // Assignment code here
 
-
 // Create password length prompt using a different method
 // Add conditional recursive function call to ensure password falls only between 8-128 characters
 var getLength = function () {
   passwordLength = "";
-    while (passwordLength < 8 || passwordLength > 128 || passwordLength === ![0-9]) {
+    while (passwordLength < 8 || passwordLength > 128 || passwordLength === null || isNaN(passwordLength)) {
       passwordLength = prompt("Please choose the length of your password (between 8 and 128 characters)");
   }
-  console.log(passwordLength)
+  console.log(passwordLength);
   return passwordLength;
 };
 
@@ -52,8 +51,7 @@ var specialCharConfirm = confirmObject.specialCharConfirm;
 console.log(specialCharConfirm);
 
 
-
-// build generatePassword function using arrays
+// Build generatePassword function using arrays
 var createPassWord = function() {
   var passwordPool = [];
   var alphaLower = ["a", "b", "c", "d", "e", "f", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
