@@ -1,5 +1,5 @@
 // Assignment code here
-
+var generatePassword = function() {
 // Create password length prompt using a different method
 // Add conditional recursive function call to ensure password falls only between 8-128 characters
 var getLength = function () {
@@ -83,7 +83,7 @@ var createPassWord = function() {
 }
 createPassWord();
 
-var generatePassword = function() {
+// var generatePassword = function() {
   var passwordArray = createPassWord();
   console.log(passwordArray)
   var password = passwordArray.join("");
@@ -91,8 +91,6 @@ var generatePassword = function() {
   return password;
 
 }
-
-console.log(generatePassword());
 
 
 // Get references to the #generate element
