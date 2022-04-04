@@ -57,11 +57,13 @@ var generatePassword = function() {
   var createPassWord = function() {
     // Create an empty array and set it to a variable named passwordPool 
     var passwordPool = [];
+    // Create arrays of the character types
     var alphaLower = ["a", "b", "c", "d", "e", "f", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
     var alphaUpper = ["A", "B", "C", "D", "E", "F", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
     var numeric = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
     var specialChar = ["!", "#", "$", "%", "&", "*", "+", "/", ":", ";", "<", "=", ">", "?", "@", "^", "{", "|", "}", "~"]
 
+    // Add character types to passwordPool depending on user's selections from which the createPassword function can draw from 
       if (lowerCaseConfirm) {
       Array.prototype.push.apply(passwordPool, alphaLower);
     }  
@@ -75,6 +77,8 @@ var generatePassword = function() {
       Array.prototype.push.apply(passwordPool, specialChar);
     }
 
+    // Create an empty array to contain the characters that will comprise the user's password
+    // Create a for loop to grab random characters from passwordPool to add to the passwordArray
     var passwordArray = [];
     for (var i = 0; i < passwordLength; i++) {
       var randomIndex = Math.floor(Math.random() * passwordPool.length);
@@ -85,6 +89,8 @@ var generatePassword = function() {
 
   createPassWord();
 
+  // Take the passwordArray that was created in the previous function and 
+  // use the join method to create a string without commas for the final password
   var passwordArray = createPassWord();
   console.log(passwordArray)
   var password = passwordArray.join("");
