@@ -1,5 +1,3 @@
-// Assignment code here
-
 // Create the generatePassword function to kick off the app and that will connect to the "Generate Password" button 
 // provided in the starter code. 
 var generatePassword = function() {
@@ -21,7 +19,7 @@ var generatePassword = function() {
 
 
   // Add a function that prompts the user to select different character types for their password 
-  // Validate and ensure that at least one character has been chosen
+  // Validate and ensure that at least one character type has been chosen
   var charTypeCheck = function() {
     var lowerCaseConfirm = window.confirm("Do you want to include lowercase characters in your password?");
     var upperCaseConfirm = window.confirm("Do you want to include uppercase characters in your password?");
@@ -87,12 +85,11 @@ var generatePassword = function() {
 
   createPassWord();
 
-  // var generatePassword = function() {
-    var passwordArray = createPassWord();
-    console.log(passwordArray)
-    var password = passwordArray.join("");
+  var passwordArray = createPassWord();
+  console.log(passwordArray)
+  var password = passwordArray.join("");
 
-    return password;
+  return password;
 
 }
 
